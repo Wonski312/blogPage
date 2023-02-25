@@ -10,20 +10,24 @@ function Navigation() {
 	const toggleNav = () => {
 		setActive(!active);
 	};
+
+	const cssClasses = active ? `${classes.mobileNav} ${classes.active}`: classes.mobileNav;
 	return (
 		<>
 			<nav className={classes.navigation}>
 				<Link href='/' className={classes.navigation__title}>
-					BulletPoint
+				<div class={classes.logo}>
+  <h1>CodeCrush</h1>
+</div>
 				</Link>
 				<FontAwesomeIcon
 					icon={faBars}
 					className={classes.hamburger}
 					onClick={toggleNav}
 				/>
-				{active && (
-					<div className={active ? `${classes.mobileNav} ${classes.active}`: classes.mobileNav}>
-						<FontAwesomeIcon icon={faX} className={classes.hamburger} onClick={toggleNav}/>
+				
+					<div className={cssClasses}>
+						<FontAwesomeIcon icon={faX} className={classes.navExit} onClick={toggleNav}/>
 						<ul className={`${classes.navigation__ul} `}>
 							<li className={classes.navigation__li}>
 								<Link href='/' onClick={toggleNav}>Home</Link>
@@ -33,7 +37,7 @@ function Navigation() {
 							</li>
 						</ul>
 					</div>
-				)}
+				
 				{/* <ul className={classes.navigation__ul}>
 					<li className={classes.navigation__li}>
 						<Link href='/about'>About page</Link>
@@ -42,7 +46,9 @@ function Navigation() {
 			</nav>
 			<nav className={classes.navigation__desktop}>
 				<Link href='/' className={classes.navigation__title}>
-					BulletPoint
+				<div class={classes.logo}>
+  <h1>CodeCrush</h1>
+</div>
 				</Link>
 				<ul className={classes.navigation__desktop__ul}>
 					<li className={classes.navigation__desktop__li}>

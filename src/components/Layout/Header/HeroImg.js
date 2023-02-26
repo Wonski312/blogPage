@@ -10,19 +10,27 @@ let i = 0;
 let generatedCode = ''
 
 useEffect(() =>{
-
-   const timer = setInterval(()=>{
-    generatedCode = generatedCode + data[i];
-    setText(generatedCode)
-    i++;
-    if (i === data.length){
-        i=0
-        // setText('')
-        generatedCode = ''
-    }
+    const timer = setInterval(()=>{
+        
+        if(i <= data.length -1 ){
+            generatedCode = generatedCode + data[i];
+            setText(generatedCode)
+            i++;
+        }
+        if (i == data.length){
+            setTimeout(() =>{
+                
+                i=0;
+                generatedCode = '';
+                
+                // setText('')
+            },1000)
+        }
     },140)
-return () =>{
-    clearInterval(timer);
+    return () =>{
+    
+            clearInterval(timer);
+        
 }
 },[i])
 

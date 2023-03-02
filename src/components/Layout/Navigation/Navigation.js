@@ -16,7 +16,7 @@ function Navigation() {
 		<>
 			<nav className={classes.navigation}>
 				<Link href='/' className={classes.navigation__title}>
-				<div class={classes.logo}>
+				<div className={classes.logo}>
   <h1>CodeCrush</h1>
 </div>
 				</Link>
@@ -46,7 +46,7 @@ function Navigation() {
 			</nav>
 			<nav className={classes.navigation__desktop}>
 				<Link href='/' className={classes.navigation__title}>
-				<div class={classes.logo}>
+				<div className={classes.logo}>
   <h1>CodeCrush</h1>
 </div>
 				</Link>

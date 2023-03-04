@@ -11,33 +11,48 @@ function Navigation() {
 		setActive(!active);
 	};
 
-	const cssClasses = active ? `${classes.mobileNav} ${classes.active}`: classes.mobileNav;
+	const cssClasses = active
+		? `${classes.mobileNav} ${classes.active}`
+		: classes.mobileNav;
 	return (
 		<>
 			<nav className={classes.navigation}>
 				<Link href='/' className={classes.navigation__title}>
-				<div className={classes.logo}>
-  <h1>CodeCrush</h1>
-</div>
+					<div className={classes.logo}>
+						<h1>CodeCrush</h1>
+					</div>
 				</Link>
 				<FontAwesomeIcon
 					icon={faBars}
 					className={classes.hamburger}
 					onClick={toggleNav}
 				/>
-				
-					<div className={cssClasses}>
-						<FontAwesomeIcon icon={faX} className={classes.navExit} onClick={toggleNav}/>
-						<ul className={`${classes.navigation__ul} `}>
-							<li className={classes.navigation__li}>
-								<Link href='/' onClick={toggleNav}>Home</Link>
-							</li>
-							<li className={classes.navigation__li}>
-								<Link href='/about' onClick={toggleNav}>About page</Link>
-							</li>
-						</ul>
-					</div>
-				
+
+				<div className={cssClasses}>
+					<FontAwesomeIcon
+						icon={faX}
+						className={classes.navExit}
+						onClick={toggleNav}
+					/>
+					<ul className={`${classes.navigation__ul} `}>
+						<li className={classes.navigation__li}>
+							<Link href='/' onClick={toggleNav}>
+								Home
+							</Link>
+						</li>
+						<li className={classes.navigation__li}>
+							<Link href='/about' onClick={toggleNav}>
+								About page
+							</Link>
+						</li>
+						<li className={classes.navigation__li}>
+							<Link href='/signIn' onClick={toggleNav}>
+								SignIN
+							</Link>
+						</li>
+					</ul>
+				</div>
+
 				{/* <ul className={classes.navigation__ul}>
 					<li className={classes.navigation__li}>
 						<Link href='/about'>About page</Link>
@@ -46,13 +61,18 @@ function Navigation() {
 			</nav>
 			<nav className={classes.navigation__desktop}>
 				<Link href='/' className={classes.navigation__title}>
-				<div className={classes.logo}>
-  <h1>CodeCrush</h1>
-</div>
+					<div className={classes.logo}>
+						<h1>CodeCrush</h1>
+					</div>
 				</Link>
 				<ul className={classes.navigation__desktop__ul}>
 					<li className={classes.navigation__desktop__li}>
 						<Link href='/about'>About page</Link>
+					</li>
+					<li className={classes.navigation__li}>
+						<Link href='/signIn' onClick={toggleNav}>
+							SignIN
+						</Link>
 					</li>
 				</ul>
 			</nav>

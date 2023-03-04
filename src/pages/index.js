@@ -23,9 +23,10 @@ const DUMMY_DATA = [
     id: '03'
   },
 ]
+
+
+
 export default function Home(props) {
-
-
 
   return (
     <>

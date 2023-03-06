@@ -5,6 +5,8 @@ const PostForm = (props) => {
 	const inputDescription = useRef();
 	const inputImage = useRef();
 
+
+	
 	const submitForm = (event) => {
         event.preventDefault();
 		const titleData = inputTitle.current.value;

@@ -1,6 +1,6 @@
 
 import { useRouter } from "next/router";
-import classes from '../Main/Main.module.scss'
+import classes from './PostItem.module.scss'
 
 const PostItem = (props) => {
 
@@ -10,12 +10,12 @@ const PostItem = (props) => {
         router.push('/' + props.id)
     
     }
-	return <div id={props.id} key={props.id}>
+	return <div id={props.id} key={props.id} className={classes.postBox}>
 		<img src={`${props.image}`} className={classes.img}></img>
 		<div className={classes.postText}>
 			<h2 className={classes.postTitle}>{props.title} </h2>
 			<p className={classes.postDescription}>{props.description} </p>
-			<button onClick={showPostDetails}>ShowPost</button>
+			<button className={classes.btn} onClick={showPostDetails}>ShowPost</button>
 		</div>
 	</div>;
 };

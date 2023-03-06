@@ -5,6 +5,16 @@ import classes from "./Navigation.module.scss";
 
 import { useState } from "react";
 function Navigation() {
+
+const navLinks = [
+	{link:'Sign In',
+href:'/'},
+{
+	link:'About Me',
+	href:'/about'
+}
+]
+
 	const [active, setActive] = useState(false);
 
 	const toggleNav = () => {
@@ -35,7 +45,12 @@ function Navigation() {
 						onClick={toggleNav}
 					/>
 					<ul className={`${classes.navigation__ul} `}>
-						<li className={classes.navigation__li}>
+						{navLinks.map(navLink => {
+							return <li className={classes.navigation__li}>
+								<Link href={navLink.href} onClick={toggleNav}>{navLink.link}</Link>
+							</li>
+						})}
+						{/* <li className={classes.navigation__li}>
 							<Link href='/' onClick={toggleNav}>
 								Home
 							</Link>
@@ -49,7 +64,7 @@ function Navigation() {
 							<Link href='/signIn' onClick={toggleNav}>
 								SignIN
 							</Link>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 
@@ -66,14 +81,19 @@ function Navigation() {
 					</div>
 				</Link>
 				<ul className={classes.navigation__desktop__ul}>
-					<li className={classes.navigation__desktop__li}>
+				{navLinks.map(navLink => {
+							return <li className={classes.navigation__desktop__li}>
+								<Link className={classes.navigation__desktop__link} href={navLink.href} onClick={toggleNav}>{navLink.link}</Link>
+							</li>
+						})}
+					{/* <li className={classes.navigation__desktop__li}>
 						<Link href='/about'>About page</Link>
 					</li>
-					<li className={classes.navigation__li}>
+					<li className={classes.navigation__desktop__li}>
 						<Link href='/signIn' onClick={toggleNav}>
 							SignIN
 						</Link>
-					</li>
+					</li> */}
 				</ul>
 			</nav>
 		</>

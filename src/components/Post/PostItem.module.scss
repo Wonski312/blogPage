@@ -1,0 +1,29 @@
+.postBox{
+    // max-width: 30%;
+    margin: 1em;
+    // border: 1px solid black;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.484);
+}
+
+
+.img{
+    width: 100%;
+    margin: 0 auto;
+}
+.postText{
+    text-align: center;
+    padding: 1em 0.5em;
+    width: 300px;
+}
+.btn{
+    border-radius: 5px;
+    font-size: 1.3rem;
+    background: #000;
+    list-style: none;
+    padding: 0.3em 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color:#fff;
+    transform: skew(-10deg);
+    margin-top: 0.5em;
+    // margin: 1em;
+}

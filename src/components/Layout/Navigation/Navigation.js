@@ -5,15 +5,14 @@ import classes from "./Navigation.module.scss";
 
 import { useState } from "react";
 function Navigation() {
-
-const navLinks = [
-	{link:'Sign In',
-href:'/'},
-{
-	link:'About Me',
-	href:'/about'
-}
-]
+	const navLinks = [
+		{ link: "Sign In", href: "/", id: 'signIn' },
+		{
+			link: "About Me",
+			href: "/about",
+			id: 'aboutMe',
+		},
+	];
 
 	const [active, setActive] = useState(false);
 
@@ -45,10 +44,14 @@ href:'/'},
 						onClick={toggleNav}
 					/>
 					<ul className={`${classes.navigation__ul} `}>
-						{navLinks.map(navLink => {
-							return <li className={classes.navigation__li}>
-								<Link href={navLink.href} onClick={toggleNav}>{navLink.link}</Link>
-							</li>
+						{navLinks.map((navLink) => {
+							return (
+								<li key={navLink.href} className={classes.navigation__li}>
+									<Link href={navLink.href} onClick={toggleNav}>
+										{navLink.link}
+									</Link>
+								</li>
+							);
 						})}
 						{/* <li className={classes.navigation__li}>
 							<Link href='/' onClick={toggleNav}>
@@ -81,11 +84,18 @@ href:'/'},
 					</div>
 				</Link>
 				<ul className={classes.navigation__desktop__ul}>
-				{navLinks.map(navLink => {
-							return <li className={classes.navigation__desktop__li}>
-								<Link className={classes.navigation__desktop__link} href={navLink.href} onClick={toggleNav}>{navLink.link}</Link>
+					{navLinks.map((navLink) => {
+						return (
+							<li key={navLink.href} className={classes.navigation__desktop__li}>
+								<Link
+									className={classes.navigation__desktop__link}
+									href={navLink.href}
+									onClick={toggleNav}>
+									{navLink.link}
+								</Link>
 							</li>
-						})}
+						);
+					})}
 					{/* <li className={classes.navigation__desktop__li}>
 						<Link href='/about'>About page</Link>
 					</li>

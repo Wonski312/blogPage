@@ -37,9 +37,9 @@
 		background-color: white;
 		top: 0;
 		left: 0;
-		bottom: 0;
+		// bottom: 0;
 		right: 0;
-		transform: translateX(-100%);
+		transform: translateX(200%);
 		opacity: 0;
 		transition: all 0.7s linear;
 	}
@@ -50,18 +50,23 @@
 	}
 }
 .hamburger {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	max-width: 100%;
-	width: 1.6em;
+	// width: 1.6em;
+
 	margin: 0em 1em 0em auto;
 
 	//    padding: 1em;
 }
 .navExit {
-	font-size: 1.5rem;
+	position: absolute;
+	font-size: 2.2rem;
 	max-width: 100%;
-	width: 1.6em;
-	margin: 1em 1em 0em auto;
+	// width: 1.6em;
+	right: 0;
+	top: 0;
+	padding: 0.5em 1em;
+	// margin: 1em 1em 0em auto;
 }
 
 .navigation__desktop {

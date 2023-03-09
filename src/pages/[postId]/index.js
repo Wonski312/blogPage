@@ -4,6 +4,20 @@ import Head from "next/head";
 function PostPage(props) {
 	const router = useRouter();
 
+	async function sendLikes(likesCount){
+
+const likes = await likesCount;
+
+
+		 fetch('https://blogpage-crushcode-default-rtdb.europe-west1.firebasedatabase.app/posts/'+props.postData.id+'.json',{
+			method: 'PATCH',
+			headers:{
+				'Content-Type': 'application/json'
+			},
+			body:JSON.stringify({likes: likes})
+		})
+	}
+
 	//to samo co link component
 	//    router.push('/' + postId);
 	return (<>
@@ -16,7 +30,9 @@ function PostPage(props) {
 		title={props.postData.title}
 		image={props.postData.image}
 		description={props.postData.description}
-		id={props.postData.id}></Post>
+		id={props.postData.id}
+		onAddLike={sendLikes}
+		likes={props.likes}></Post>
 	</>
 	);
 }
@@ -86,6 +102,7 @@ console.log(selectedPost);
 				image: selectedPost.image,
 				description: selectedPost.description,
 				id: postId,
+				likes: selectedPost.likes
 			},
 		},
 	};

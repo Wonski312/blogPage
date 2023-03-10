@@ -17,6 +17,7 @@
 }
 
 .navigation {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.6rem;
@@ -25,9 +26,10 @@
 	&__ul {
 		list-style: none;
 		margin-top: 2em;
+		padding: 2em;
 	}
 	&__li {
-		padding: 0.5em;
+		padding: 0.5em 0;
 		list-style: none;
 		text-align: center;
 	}
@@ -44,15 +46,16 @@
 		transition: all 0.7s linear;
 	}
 	.active {
+		background-color: #d0d0d0;
 		display: flex;
 		opacity: 1;
 		transform: translateX(0);
 	}
 }
 .hamburger {
-	font-size: 2.5rem;
+	font-size: 1.6rem;
 	max-width: 100%;
-	// width: 1.6em;
+	width: 1.6em;
 
 	margin: 0em 1em 0em auto;
 
@@ -60,12 +63,11 @@
 }
 .navExit {
 	position: absolute;
-	font-size: 2.2rem;
-	max-width: 100%;
-	// width: 1.6em;
-	right: 0;
-	top: 0;
-	padding: 0.5em 1em;
+	// font-size: 2.2rem;
+	width: 1.6em;
+	right: 5%;
+	top: 5%;
+	// padding: 0.5em 1em;
 	// margin: 1em 1em 0em auto;
 }
 

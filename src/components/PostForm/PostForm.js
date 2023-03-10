@@ -1,5 +1,5 @@
 import { useRef } from "react";
-
+import classes from './PostForm.module.scss'
 const PostForm = (props) => {
 	const inputTitle = useRef();
 	const inputDescription = useRef();
@@ -20,20 +20,20 @@ const PostForm = (props) => {
 	};
 
 	return (
-		<form onSubmit={submitForm}>
-			<div>
-				<label htmlFor='post-title'>input title</label>
+		<form onSubmit={submitForm} className={classes.form}>
+			<div className={classes.inputbox}>
+				<label htmlFor='post-title'>Enter title</label>
 				<input ref={inputTitle} id='post-title' type='text' required></input>
 			</div>
-			<div>
+			<div className={classes.inputbox}>
 				<label htmlFor='post-description'> input description</label>
-				<input
+				<textarea
 					ref={inputDescription}
 					id='post-description'
 					type='text'
-					required></input>
+					required></textarea>
 			</div>
-			<div>
+			<div className={classes.inputbox}>
 				<label htmlFor='post-image'> input Image</label>
 				<input
 					ref={inputImage}
@@ -43,7 +43,7 @@ const PostForm = (props) => {
 			</div>
 			
 
-            <button >submit</button>
+            <button className={classes.btn}>submit</button>
 		</form>
 	);
 };

@@ -102,7 +102,7 @@ console.log(selectedPost);
 				image: selectedPost.image,
 				description: selectedPost.description,
 				id: postId,
-				likes: selectedPost.likes
+				likes: selectedPost.likes ? selectedPost.likes = selectedPost.likes : selectedPost.likes = 0
 			},
 		},
 	};

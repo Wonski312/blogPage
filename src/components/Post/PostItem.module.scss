@@ -1,17 +1,25 @@
 .postBox{
+    // display: flex;
+    // flex-direction: column;
     // max-width: 30%;
     margin: 1em;
     // border: 1px solid black;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.484);
+    max-height: 400px;
 }
 
 
 .img{
+   height: 50%;
     width: 100%;
     margin: 0 auto;
 }
 .postText{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    // text-align: center;
     padding: 1em 0.5em;
     width: 300px;
 }

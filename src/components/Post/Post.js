@@ -7,12 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Post = (props) =>{
 
-    const [likes, setLikes] = useState(props.likes)
+    const [likes, setLikes] = useState(props.likes )
 
 const addLike = () =>{
-   setLikes(likes + 1);
+//    setLikes(likes + 1);
+   setLikes(prevLikes => prevLikes + 1);
 
-    props.onAddLike(likes+1)
+    props.onAddLike(likes + 1)
 }
 
     return (
@@ -25,13 +26,7 @@ const addLike = () =>{
     <img src={props.image}></img>
     <p className={classes.postText}>{props.description}</p>
    
-    {/* <ReactMarkdown remarkPlugins={[remarkGfm]} >
-        ### hi react Markdown
 
-       - 1
-       
-       - fgwsda
-    </ReactMarkdown> */}
 </div>
         
         </>

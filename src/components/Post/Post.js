@@ -7,18 +7,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Post = (props) =>{
 
-    const [likes, setLikes] = useState(0)
+    const [likes, setLikes] = useState(props.likes)
 
-const async addLike = () =>{
-   await setLikes(props.likes + 1);
+const addLike = () =>{
+   setLikes(likes + 1);
 
-    props.onAddLike(likes)
+    props.onAddLike(likes+1)
 }
 
     return (
         <>
         <div className={classes.likesBox}>
-            <button className={classes.likeBtn} onClick={addLike}><FontAwesomeIcon icon="fas fa-thumbs-up" /> <span>&#9995;{props.likes}</span></button>
+            <button className={classes.likeBtn} onClick={addLike}><FontAwesomeIcon icon="fas fa-thumbs-up" /> <span>&#9995;{likes}</span></button>
         </div>
 <div className={classes.post}>
     <h1 className={classes.title}>{props.title}</h1>

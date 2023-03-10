@@ -4,9 +4,9 @@ import Head from "next/head";
 function PostPage(props) {
 	const router = useRouter();
 
-	async function sendLikes(likesCount){
+	function sendLikes(likesCount){
 
-const likes = await likesCount;
+const likes =likesCount;
 
 
 		 fetch('https://blogpage-crushcode-default-rtdb.europe-west1.firebasedatabase.app/posts/'+props.postData.id+'.json',{
@@ -32,7 +32,7 @@ const likes = await likesCount;
 		description={props.postData.description}
 		id={props.postData.id}
 		onAddLike={sendLikes}
-		likes={props.likes}></Post>
+		likes={props.postData.likes}></Post>
 	</>
 	);
 }

@@ -20,10 +20,16 @@ const addLike = () =>{
         <>
         <div className={classes.likesBox}>
             <button className={classes.likeBtn} onClick={addLike}><FontAwesomeIcon icon="fas fa-thumbs-up" /> <span>&#9995;{likes}</span></button>
+            
+            
+            <div className={classes.likesBox__author}>
+                <p>author: S.marcisz</p>
+                <p  className={classes.likesBox__pub}>published: <span>12.12.2023</span></p>
+            </div>
         </div>
 <div className={classes.post}>
     <h1 className={classes.title}>{props.title}</h1>
-    <img src={props.image}></img>
+    <img src={props.image} className={classes.post__img}></img>
     <p className={classes.postText}>{props.description}</p>
    
 

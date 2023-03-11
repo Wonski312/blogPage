@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    &__img{
+        width: 100%;
+    }
 }
 
 .postText{
@@ -17,9 +20,25 @@
 
 }
 
+.likesBox{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    // font-size: 1.6rem;
+    &__author{
+        font-size: 1.3rem;
+    }
+    &__pub{
+        // padding: 0.2em;
+        // font-size: 1.6rem;
+    }
+}
 .likeBtn{
     background-color: #4c90c1;
     color:#fff;
+    padding: 0.2em 1em;
     font-size: 1.6rem;
     padding: 0.2em 1em;
     border-radius: 50px;

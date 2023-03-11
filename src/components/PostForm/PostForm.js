@@ -1,11 +1,14 @@
 import { useRef } from "react";
 import classes from './PostForm.module.scss'
+import Paragraph from "./Paragraph";
 const PostForm = (props) => {
 	const inputTitle = useRef();
 	const inputDescription = useRef();
 	const inputImage = useRef();
 
-
+	const addParagraph = () =>{
+		return Paragraph
+	}
 	
 	const submitForm = (event) => {
         event.preventDefault();
@@ -32,6 +35,8 @@ const PostForm = (props) => {
 					id='post-description'
 					type='text'
 					required></textarea>
+					{}
+					<button onClick={addParagraph}>Add paragraph</button>
 			</div>
 			<div className={classes.inputbox}>
 				<label htmlFor='post-image'> input Image</label>

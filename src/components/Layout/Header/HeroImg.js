@@ -4,7 +4,7 @@ import classes from "./HeroImg.module.scss";
 const HeroImg = () => {
 
    const [text, setText] = useState()
-   const staticText = 'Give whatever You want to the comunity of developers'
+   const staticText = 'developers'
    let data = staticText.split('')
 let i = 0;
 let generatedCode = ''
@@ -19,10 +19,14 @@ useEffect(() =>{
         }
         if (i == data.length){
             setTimeout(() =>{
-                
-                i=0;
+                i=0
+                // generatedCode = generatedCode - data[i];
+                // setText(generatedCode)
+                // i--;
+                // console.log(i);
+                // i= i;
                 generatedCode = '';
-                
+            // generatedCode =  generatedCode - data[i];
                 // setText('')
             },1000)
         }
@@ -40,7 +44,7 @@ useEffect(() =>{
 				Welcome to <br />
 				<span>CodeCrush</span>
 			</h2>
-			<p className={classes.heroImg__text}>{text}|</p>
+			<p className={classes.heroImg__text}>Platform for {text}|</p>
 		</div>
 	);
 };

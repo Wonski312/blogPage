@@ -1,13 +1,14 @@
-import { useRef } from "react";
+import {  useRef, useState } from "react";
 import classes from './PostForm.module.scss'
 import Paragraph from "./Paragraph";
 const PostForm = (props) => {
+	const [paragraphs, setParagraphs] = useState([])
 	const inputTitle = useRef();
 	const inputDescription = useRef();
 	const inputImage = useRef();
 
 	const addParagraph = () =>{
-		return Paragraph
+		setParagraphs(...paragraphs, Paragraph)
 	}
 	
 	const submitForm = (event) => {
@@ -35,8 +36,17 @@ const PostForm = (props) => {
 					id='post-description'
 					type='text'
 					required></textarea>
-					{}
-					<button onClick={addParagraph}>Add paragraph</button>
+					{
+					console.log(paragraphs.length)
+					}
+					{/* {paragraphs.map(paragraph =>{
+						return <input></input>
+					})} */}
+					{/* {console.log(paragraphs)}
+					{paragraphs.map(paragraph =>{
+
+					})} */}
+					<button type='button' onClick={addParagraph}>Add paragraph</button>
 			</div>
 			<div className={classes.inputbox}>
 				<label htmlFor='post-image'> input Image</label>

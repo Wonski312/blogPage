@@ -6,12 +6,13 @@ import classes from "./Navigation.module.scss";
 import { useState } from "react";
 function Navigation() {
 	const navLinks = [
-		{ link: "Sign In", href: "/", id: 'signIn' },
+		{ link: "Sign In", href: "/", id: "signIn" },
 		{
 			link: "About Me",
 			href: "/about",
-			id: 'aboutMe',
+			id: "aboutMe",
 		},
+		{ link: "New Post", href: "/new-post", id: "newpost" },
 	];
 
 	const [active, setActive] = useState(false);
@@ -86,7 +87,9 @@ function Navigation() {
 				<ul className={classes.navigation__desktop__ul}>
 					{navLinks.map((navLink) => {
 						return (
-							<li key={navLink.href} className={classes.navigation__desktop__li}>
+							<li
+								key={navLink.href}
+								className={classes.navigation__desktop__li}>
 								<Link
 									className={classes.navigation__desktop__link}
 									href={navLink.href}

@@ -1,26 +1,24 @@
-import {  useRef, useState } from "react";
-import classes from './PostForm.module.scss'
+import { useRef, useState } from "react";
+import classes from "./PostForm.module.scss";
 import Paragraph from "./Paragraph";
 const PostForm = (props) => {
-	const [paragraphs, setParagraphs] = useState([])
 	const inputTitle = useRef();
 	const inputDescription = useRef();
 	const inputImage = useRef();
 
-	const addParagraph = () =>{
-		setParagraphs(...paragraphs, Paragraph)
-	}
-	
 	const submitForm = (event) => {
-        event.preventDefault();
+		event.preventDefault();
 		const titleData = inputTitle.current.value;
 		const DescriptionData = inputDescription.current.value;
 		const imageData = inputImage.current.value;
 
-        const postData = { title: titleData, description: DescriptionData, image: imageData }
+		const postData = {
+			title: titleData,
+			description: DescriptionData,
+			image: imageData,
+		};
 
-
-		props.onAddData(postData)
+		props.onAddData(postData);
 	};
 
 	return (
@@ -36,29 +34,13 @@ const PostForm = (props) => {
 					id='post-description'
 					type='text'
 					required></textarea>
-					{
-					console.log(paragraphs.length)
-					}
-					{/* {paragraphs.map(paragraph =>{
-						return <input></input>
-					})} */}
-					{/* {console.log(paragraphs)}
-					{paragraphs.map(paragraph =>{
-
-					})} */}
-					<button type='button' onClick={addParagraph}>Add paragraph</button>
 			</div>
 			<div className={classes.inputbox}>
 				<label htmlFor='post-image'> input Image</label>
-				<input
-					ref={inputImage}
-					id='post-image'
-					type='text'
-					required></input>
+				<input ref={inputImage} id='post-image' type='text' required></input>
 			</div>
-			
 
-            <button className={classes.btn}>submit</button>
+			<button className={classes.btn}>submit</button>
 		</form>
 	);
 };

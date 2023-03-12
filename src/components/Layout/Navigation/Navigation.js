@@ -6,7 +6,7 @@ import classes from "./Navigation.module.scss";
 import { useState } from "react";
 function Navigation() {
 	const navLinks = [
-		{ link: "Sign In", href: "/", id: "signIn" },
+		{ link: "Sign Up", href: "/auth?mode=Login", id: "Login" },
 		{
 			link: "About Me",
 			href: "/about",

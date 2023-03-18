@@ -46,7 +46,7 @@
 		transition: all 0.7s linear;
 	}
 	.active {
-		background-color: #d0d0d0;
+		background-color: #f6f6f6;
 		display: flex;
 		opacity: 1;
 		transform: translateX(0);
@@ -67,8 +67,6 @@
 	width: 1.6em;
 	right: 5%;
 	top: 5%;
-	// padding: 0.5em 1em;
-	// margin: 1em 1em 0em auto;
 }
 
 .navigation__desktop {

@@ -5,9 +5,14 @@ import classes from './AuthForm.module.scss';
 
 import signUp from "@/firebase/auth/signup";
 import signIn from "@/firebase/auth/signin";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { app } from "@/firebase/firebaseConfig";
+import { useDispatch } from "react-redux";
+import { setUpUser } from "@/store/store";
 
-import { auth, createUserWithEmailAndPassword } from "../../firebase/firebaseConfig";
 const AuthForm = (props) => {
+const dispatch = useDispatch();
+	const auth = getAuth(app)
 const router = useRouter()
 	// const auth = getAuth()
 	
@@ -29,15 +34,39 @@ if(isLogin === 'Login'){
 	if(error){
 		return console.log(error);
 	}
-	console.log(result)
+
+
+	onAuthStateChanged(auth, user =>{
+		if (user){
+			console.log(user)
+			
+			const token = user.accessToken
+			dispatch(setUpUser(token))
+			
+		}else{
+			dispatch(setUpUser(null))
+		}
+	})
+
+		// onAuthStateChanged(auth, user =>{
+		// 	if(user) {
+		// 		dispatch(setUpUser(user))
+		// 	}else{
+		// 		dispatch(setUpUser(null))
+		// 	}
+		// })
+		
+			router.push('/')
+	return result
 	
 }else{
 	const {result, error} = await signUp(user, userpassword)
 	if(error){
 		return console.log(error);
 	}
-	console.log(result)
 	
+	router.push('/')
+	return result
 }
 
 

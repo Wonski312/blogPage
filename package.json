@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.1.6",
+    "@reduxjs/toolkit": "^1.9.3",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "firebase": "^9.17.2",
@@ -20,6 +21,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.5",
+    "react-redux": "^8.0.5",
     "react-transition-group": "^4.4.5",
     "remark-gfm": "^3.0.1",
     "sass": "^1.58.1"

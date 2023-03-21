@@ -2,17 +2,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCross, faX } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import classes from "./Navigation.module.scss";
-
+import { getAuth } from "firebase/auth";
 import { useState } from "react";
+import LogoutButton from "@/components/UI/LogOut";
+
+import { useSelector } from "react-redux";
 function Navigation() {
+const userState = useSelector(state => state.userLoggedIn);
+	const auth = getAuth()
+
+
 	const navLinks = [
-		{ link: "Sign Up", href: "/auth?mode=Login", id: "Login" },
+		{ link: "Sign Up", href: "/auth?mode=Login", id: "Login", hidden :false},
 		{
 			link: "About Me",
 			href: "/about",
 			id: "aboutMe",
 		},
-		{ link: "New Post", href: "/new-post", id: "newpost" },
+		{ link: "New Post", href: "/new-post", id: "newpost", hidden: true },
 	];
 
 	const [active, setActive] = useState(false);
@@ -47,13 +54,15 @@ function Navigation() {
 					<ul className={`${classes.navigation__ul} `}>
 						{navLinks.map((navLink) => {
 							return (
-								<li key={navLink.href} className={classes.navigation__li}>
+								
+							<li key={navLink.href} className={classes.navigation__li}>
 									<Link href={navLink.href} onClick={toggleNav}>
 										{navLink.link}
 									</Link>
 								</li>
 							);
 						})}
+						{userState && <LogoutButton/>}
 						{/* <li className={classes.navigation__li}>
 							<Link href='/' onClick={toggleNav}>
 								Home
@@ -107,6 +116,7 @@ function Navigation() {
 							SignIN
 						</Link>
 					</li> */}
+					{userState && 	<LogoutButton/>}
 				</ul>
 			</nav>
 		</>

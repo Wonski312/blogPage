@@ -86,9 +86,9 @@
 			list-style: none;
 		}
 		&__li {
+			margin-top: 1em;
 			margin-right: 0.5em;
 			transform: skew(-10deg);
-			
 			a,
 			a:focus,
 			a:active {
@@ -96,6 +96,7 @@
 			}
 		}
 		&__link{
+			
 			border-radius: 5px;
 			font-size: 1.3rem;
 			background: #000;
